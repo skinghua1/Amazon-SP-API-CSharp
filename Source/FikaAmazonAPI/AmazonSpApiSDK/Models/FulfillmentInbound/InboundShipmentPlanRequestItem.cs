@@ -43,7 +43,7 @@ namespace FikaAmazonAPI.AmazonSpApiSDK.Models.FulfillmentInbound
         /// <param name="Quantity">Quantity (required).</param>
         /// <param name="QuantityInCase">The item quantity in each case, for case-packed items. Note that QuantityInCase multiplied by the number of cases in the inbound shipment equals Quantity. Also note that all of the boxes of an inbound shipment must either be case packed or individually packed. For that reason, when you submit the createInboundShipmentPlan operation, the value of QuantityInCase must be provided for every item in the shipment or for none of the items in the shipment..</param>
         /// <param name="PrepDetailsList">PrepDetailsList.</param>
-        public InboundShipmentPlanRequestItem(string SellerSKU = default(string), string ASIN = default(string), Condition Condition = default(Condition), Quantity Quantity = default(Quantity), Quantity QuantityInCase = default(Quantity), PrepDetailsList PrepDetailsList = default(PrepDetailsList))
+        public InboundShipmentPlanRequestItem(string SellerSKU = default(string), string ASIN = default(string), Condition Condition = default(Condition), int Quantity = default(int), int QuantityInCase = default(int), PrepDetailsList PrepDetailsList = default(PrepDetailsList))
         {
             // to ensure "SellerSKU" is required (not null)
             if (SellerSKU == null)
@@ -104,14 +104,14 @@ namespace FikaAmazonAPI.AmazonSpApiSDK.Models.FulfillmentInbound
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "Quantity", EmitDefaultValue = false)]
-        public Quantity Quantity { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
         /// The item quantity in each case, for case-packed items. Note that QuantityInCase multiplied by the number of cases in the inbound shipment equals Quantity. Also note that all of the boxes of an inbound shipment must either be case packed or individually packed. For that reason, when you submit the createInboundShipmentPlan operation, the value of QuantityInCase must be provided for every item in the shipment or for none of the items in the shipment.
         /// </summary>
         /// <value>The item quantity in each case, for case-packed items. Note that QuantityInCase multiplied by the number of cases in the inbound shipment equals Quantity. Also note that all of the boxes of an inbound shipment must either be case packed or individually packed. For that reason, when you submit the createInboundShipmentPlan operation, the value of QuantityInCase must be provided for every item in the shipment or for none of the items in the shipment.</value>
         [DataMember(Name = "QuantityInCase", EmitDefaultValue = false)]
-        public Quantity QuantityInCase { get; set; }
+        public int QuantityInCase { get; set; }
 
         /// <summary>
         /// Gets or Sets PrepDetailsList
